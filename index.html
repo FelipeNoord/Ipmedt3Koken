@@ -12,9 +12,22 @@
 
     <a-scene>
         <a-assets>
+            <a-asset-item id="keukeneiland-gltf" src="blendermodels/keukeneiland.gltf"></a-asset-item>
+            <a-asset-item id="raam-glb" src="blendermodels/raam.glb"></a-asset-item>
+        </a-assets> 
+        <a-entity gltf-model="#keukeneiland-gltf" position="0 0 1"></a-entity>
+        <a-entity gltf-model="#raam-glb" position="-5 2 0" scale="1 1.2 1"></a-entity>
 
-        </a-assets>
-        
+        <!-- floor -->
+        <a-plane color="#878276" rotation="-90 0 0" position="0 0 0" width="10" height="10"></a-plane>
+        <!-- front wall -->
+        <a-plane color="#d8ddb3" position="0 2 -5" height="4" width="10"></a-plane>
+        <!-- back wall -->
+        <a-plane color="#d8ddb3" position="0 2 5" rotation="0 180 0" height="4" width="10"></a-plane>
+        <!-- left wall -->
+        <a-plane color="#d8ddb3" position="-5 2 0" rotation="0 90 0" height="4" width="10"></a-plane>
+        <!-- right wall -->
+        <a-plane color="#d8ddb3" position="5 2 0" rotation="0 -90 0" height="4" width="10"></a-plane>
     </a-scene>
 </body>
 </html>
