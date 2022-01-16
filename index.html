@@ -12,11 +12,14 @@
 
     <a-scene>
         <a-assets>
-            <a-asset-item id="keukeneiland-gltf" src="blendermodels/keukeneiland.gltf"></a-asset-item>
+            <a-asset-item id="aanrecht_block-glb" src="blendermodels/aanrecht_block.glb"></a-asset-item>
             <a-asset-item id="raam-glb" src="blendermodels/raam.glb"></a-asset-item>
+            <a-asset-item id="koelkast-glb" src="blendermodels/koelkast.glb"></a-asset-item>
+            <a-asset-item id="koelkast_deur-glb" src="blendermodels/koelkast_deur.glb"></a-asset-item>
+            <a-asset-item id="chefsmes-glb" src="blendermodels/chefsmes.glb"></a-asset-item>
         </a-assets> 
-        <a-entity gltf-model="#keukeneiland-gltf" position="0 0 1"></a-entity>
-        <a-entity gltf-model="#raam-glb" position="-5 2 0" scale="1 1.2 1"></a-entity>
+
+        <!-- surroundings -->>
 
         <!-- floor -->
         <a-plane color="#878276" rotation="-90 0 0" position="0 0 0" width="10" height="10"></a-plane>
@@ -28,6 +31,20 @@
         <a-plane color="#d8ddb3" position="-5 2 0" rotation="0 90 0" height="4" width="10"></a-plane>
         <!-- right wall -->
         <a-plane color="#d8ddb3" position="5 2 0" rotation="0 -90 0" height="4" width="10"></a-plane>
+
+        <a-entity gltf-model="#aanrecht_block-glb" position="0 0 1" scale="3 1 1"></a-entity>
+        <a-entity gltf-model="#raam-glb" position="-5 2 0" scale="1 1.2 1"></a-entity>
+
+        <a-entity gltf-model="#aanrecht_block-glb" position="0 0 -4.5" rotation="0 180 0" scale="5 1 1"></a-entity>
+
+        <!-- koelkast -->>
+        <a-entity gltf-model="#koelkast-glb" position="3 0 -4.5" scale="0.5 0.5 0.5">
+        <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
+        </a-entity>
+
+        <a-entity gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="80 110 0" position="1 1.02 -4.2" scale="0.1 0.1 0.1"></a-entity>
+
+        
     </a-scene>
 </body>
 </html>
