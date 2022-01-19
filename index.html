@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <a-scene>
+    <a-scene> 
         <a-assets>
             <a-asset-item id="aanrecht_block-glb" src="blendermodels/aanrecht_block.glb"></a-asset-item>
             <a-asset-item id="raam-glb" src="blendermodels/raam.glb"></a-asset-item>
@@ -18,6 +18,20 @@
             <a-asset-item id="koelkast_deur-glb" src="blendermodels/koelkast_deur.glb"></a-asset-item>
             <a-asset-item id="chefsmes-glb" src="blendermodels/chefsmes.glb"></a-asset-item>
         </a-assets> 
+
+        <a-camera id="js--camera">
+            <a-cursor id="js--cursor" color="black" geometry = "primitive: ring; radiusInner: 0.025; radiusOuter: 0.03"></a-cursor>
+            <a-entity
+                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+                animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                cursor = "fuse: true; fuseTimeout: 2000"
+                material = "color: black; shader: flat"
+                geometry = "primitive: ring; radiusInner: 0.008; radiusOuter: 0.009"
+                position = "0 0 -0.5"
+                raycaster = "objects: .js--interact">
+            </a-entity>
+        </a-camera>
 
         <!-- surroundings -->
 
@@ -44,8 +58,8 @@
 
         <a-entity gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="80 110 0" position="1 1.02 -4.2" scale="0.1 0.1 0.1"></a-entity>
 
-        <a-box color="blue" scale="0.5 0.01 0.5" position="1 1 1">
-            <a-box color="red" scale="0.5 50 0.5"></a-box>
+        <a-box id="snijplank" color="blue" scale="0.5 0.01 0.5" position="1 1 1">
+            <a-box id="tomato" color="red" scale="0.5 50 0.5"></a-box>
         </a-box>
 
         
