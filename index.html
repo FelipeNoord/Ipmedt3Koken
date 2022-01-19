@@ -6,7 +6,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="js/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lekker Koken</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
             <a-asset-item id="chefsmes-glb" src="blendermodels/chefsmes.glb"></a-asset-item>
         </a-assets> 
 
-        <!-- surroundings -->>
+        <!-- surroundings -->
 
         <!-- floor -->
         <a-plane color="#878276" rotation="-90 0 0" position="0 0 0" width="10" height="10"></a-plane>
@@ -37,12 +37,16 @@
 
         <a-entity gltf-model="#aanrecht_block-glb" position="0 0 -4.5" rotation="0 180 0" scale="5 1 1"></a-entity>
 
-        <!-- koelkast -->>
+        <!-- koelkast -->
         <a-entity gltf-model="#koelkast-glb" position="3 0 -4.5" scale="0.5 0.5 0.5">
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
         <a-entity gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="80 110 0" position="1 1.02 -4.2" scale="0.1 0.1 0.1"></a-entity>
+
+        <a-box color="blue" scale="0.5 0.01 0.5" position="1 1 1">
+            <a-box color="red" scale="0.5 50 0.5"></a-box>
+        </a-box>
 
         
     </a-scene>
