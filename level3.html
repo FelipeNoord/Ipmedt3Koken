@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="js/cut.js"></script>
+    <script src="js/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/pickup.js"></script>
     <script src="js/levelselect.js"></script>
-    <title>Lekker Koken</title>
+    <title>Document</title>
 </head>
 <body>
 
-    <a-scene> 
+    <a-scene>
         <a-assets>
             <a-asset-item id="eiland-glb" src="blendermodels/keukeneiland.gltf"></a-asset-item>
             <a-asset-item id="raam-glb" src="blendermodels/raam.glb"></a-asset-item>
@@ -23,7 +23,7 @@
         </a-assets> 
 
         <a-camera id="js--camera">
-            <a-entity cut
+            <a-entity
               animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
               animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
               animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
@@ -36,20 +36,19 @@
         </a-camera>
 
         <!-- floor -->
-        <a-plane id="floor" color="#878276" rotation="-90 0 0" position="0 0 3.5" width="10" height="10"></a-plane>
+        <a-plane color="#878276" rotation="-90 0 0" position="0 0 3.5" width="10" height="10"></a-plane>
         <!-- front wall -->
         <a-plane color="#d8ddb3" position="0 2 -1.5" height="4" width="10"></a-plane>
         <!-- back wall -->
-        <a-plane color="#d8ddb3" position="0 2 8.5" rotation="0 180 0" height="4" width="10"></a-plane>
+        <a-plane color="#d8ddb3" position="0 2 5" rotation="0 180 0" height="4" width="10"></a-plane>
         <!-- left wall -->
-        <a-plane color="#d8ddb3" position="-5 2 3.5" rotation="0 90 0" height="4" width="10"></a-plane>
+        <a-plane color="#d8ddb3" position="-5 2 0" rotation="0 90 0" height="4" width="10"></a-plane>
         <!-- right wall -->
-        <a-plane color="#d8ddb3" position="5 2 3.5" rotation="0 -90 0" height="4" width="10"></a-plane>
+        <a-plane color="#d8ddb3" position="5 2 0" rotation="0 -90 0" height="4" width="10"></a-plane>
 
-        <a-entity id="eiland" gltf-model="#eiland-glb" position="0 0 1" scale="1 0.9 1"></a-entity>
+        <a-entity gltf-model="#eiland-glb" position="0 0 1" scale="1 0.9 1"></a-entity>
         <a-entity gltf-model="#raam-glb" position="-5 2 0" scale="1 1.2 1"></a-entity>
         <a-entity light="type: ambient; intensity: 0.5" position="0 3 10"></a-entity>
-
 
         <!--licht-->>
         <a-entity light="type: spot; intensity: 0.3; angle: 45; target: #focus;" scale="0.1 0.1 0.1" position="0 3 15"></a-entity>
@@ -59,7 +58,7 @@
 
         <a-entity id="focus" position="0 2 0"></a-entity>
 
-        <a-entity gltf-model="#keuken-glb" position="0 0 -1.15" rotation="0 180 0" scale="1 0.9 1"></a-entity>
+        <a-entity gltf-model="#keuken-glb" light="type: directional" position="0 0 -1.15" rotation="0 180 0" scale="1 0.9 1"></a-entity>
 
         <!-- Fridge -->
         <a-entity gltf-model="#koelkast-glb" position="3 0 -1" scale="0.5 0.5 0.5">
@@ -67,19 +66,6 @@
         </a-entity>
 
         <a-entity pickup class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
-
-        <!--spotlight voor snijplank + snijplank-->
-        
-        <a-box id="snijplank" class="js--interact js--pickup" color="green" scale="0.5 0.01 0.5" position="0 1.14 1">
-            <a-box id="tomato" color="red" scale="0.5 50 0.5"></a-box>
-            <a-entity light="type: spot; color: #45B3E0; intensity: 0.3; angle: 7; target: #snijplank;" scale="0.1 0.1 0.1" position="0 300 0"></a-entity>
-        </a-box>
-
-        
-        <!-- Starting Screen -->
-        <a-plane levelselect class="js--interact" id="js--level1" height="0.4" position="0 2.35 -1.4" text="value: Level 1; color: black; align: center; width: 4;"></a-plane>
-        <a-plane levelselect class="js--interact" id="js--level2" height="0.4" position="0 1.85 -1.4" text="value: Level 2; color: black; align: center; width: 4;"></a-plane>
-        <a-plane levelselect class="js--interact" id="js--level3" height="0.4" position="0 1.35 -1.4" text="value: Level 3; color: black; align: center; width: 4;"></a-plane>
 
 
     </a-scene>
