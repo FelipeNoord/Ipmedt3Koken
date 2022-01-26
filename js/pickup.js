@@ -83,7 +83,6 @@
 
 
         const placeholders = document.getElementsByClassName('js--placeholder');
-        let scene = document.getElementById('js--scene');
         const snijplank = document.getElementById("snijplank");
 
 

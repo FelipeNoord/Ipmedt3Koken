@@ -75,12 +75,11 @@
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
-        <a-entity pickup class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity class="js--interact" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
 
         <!--spotlight voor snijplank + snijplank-->
         
         <a-box id="snijplank" class="js--interact js--placeholder" color="green" scale="0.5 0.01 0.5" position="0 1.14 1">
-            <a-entity light="type: spot; color: #45B3E0; intensity: 0.3; angle: 7; target: #snijplank;" scale="0.1 0.1 0.1" position="0 300 0"></a-entity>
         </a-box>
         <a-sphere class="js--pickup js--interact tomaat" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>
         <a-cylinder class="js--pickup js--interact burger" height="0.04" radius="0.2" position="-0.02897 1.18912 0.62695" color="brown"></a-cylinder>
