@@ -6,6 +6,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="js/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/pickup.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -20,7 +21,18 @@
             <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
         </a-assets> 
 
-        <!-- surroundings -->
+        <a-camera id="js--camera">
+            <a-entity
+              animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+              animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+              animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+              cursor = "fuse: true; fuseTimeout: 2000"
+              material = "color: black; shader: flat"
+              geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+              position = "0 0 -0.5"
+              raycaster = "objects: .js--interact"
+            ></a-entity>
+        </a-camera>
 
         <!-- floor -->
         <a-plane color="#878276" rotation="-90 0 0" position="0 0 3.5" width="10" height="10"></a-plane>
@@ -44,9 +56,12 @@
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
-        <a-entity gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
+        <a-box pickup class="js--pickup js--interact" position="0 2 -1" color="blue"></a-box>
 
         
     </a-scene>
 </body>
+
+
 </html>

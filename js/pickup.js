@@ -7,13 +7,16 @@
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
         let hold = null;
+        console.log("hallo");
 
       function addListeners(){
+        
         for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener("click", function(evt){
           if(hold == null){
-          camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="green" position="1 -1 -1"></a-box>';
+          camera.innerHTML += '<a-entity gltf-model="#chefsmes-glb" id="mes" rotation="-45 80 50" position="0.3 -0.2 -0.3" scale="0.1 0.1 0.1"></a-entity>';
           hold = "box";
+          console.log(this);
           this.remove();
           }
         });
