@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/pickup.js"></script>
     <script src="js/cut.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/pickup.js"></script>
@@ -12,28 +13,38 @@
 </head>
 <body>
 
-    <a-scene> 
+    <a-scene id="js--scene" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
         <a-assets>
             <a-asset-item id="eiland-glb" src="blendermodels/keukeneiland.gltf"></a-asset-item>
             <a-asset-item id="raam-glb" src="blendermodels/raam.glb"></a-asset-item>
             <a-asset-item id="koelkast-glb" src="blendermodels/koelkast.glb"></a-asset-item>
             <a-asset-item id="koelkast_deur-glb" src="blendermodels/koelkast_deur.glb"></a-asset-item>
             <a-asset-item id="chefsmes-glb" src="blendermodels/chefsmes.glb"></a-asset-item>
-            <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
+            <a-asset-item id="burger-glb" src="blendermodels/burger.glb"></a-asset-item>
+            <a-asset-item id="tomaat-s-glb" src="blendermodels/tomaat.glb"></a-asset-item>
         </a-assets> 
 
-        <a-camera id="js--camera">
-            <a-entity cut
-              animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
-              animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
-              animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-              cursor = "fuse: true; fuseTimeout: 2000"
-              material = "color: black; shader: flat"
-              geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
-              position = "0 0 -0.5"
-              raycaster = "objects: .js--interact"
-            ></a-entity>
-        </a-camera>
+        <a-camera pickup id="js--camera" position="-0.5 1.5 0">
+
+        <a-cursor tp cut
+    
+        animation__click="property: scale; startEvents: click;
+        easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+  
+        animation__fusing="property: scale; startEvents: fusing;
+        easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+  
+        animation="property: scale; startEvents: mouseleave;
+        easing: easeInCubic; dur: 500; to: 1 1 1"
+        cursor = "fuse: true; fuseTimeout: 2000"
+        material = "shader: flat"
+        color="black"
+        geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+        position = "0 0 -0.5"
+        raycaster = "objects: .js--interact"
+        ></a-cursor>
+
+    </a-camera>
 
         <!-- floor -->
         <a-plane id="floor" color="#878276" rotation="-90 0 0" position="0 0 3.5" width="10" height="10"></a-plane>
@@ -68,12 +79,12 @@
 
         <a-entity pickup class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
 
-        <!--spotlight voor snijplank + snijplank-->
-        
-        <a-box id="snijplank" class="js--interact js--pickup" color="green" scale="0.5 0.01 0.5" position="0 1.14 1">
-            <a-box id="tomato" color="red" scale="0.5 50 0.5"></a-box>
-            <a-entity light="type: spot; color: #45B3E0; intensity: 0.3; angle: 7; target: #snijplank;" scale="0.1 0.1 0.1" position="0 300 0"></a-entity>
+        <a-box cut id="snijplank" class=" js--placeholder js--interact" height="0.1" width="0.3" color="green" position="1 1.17137 1">
         </a-box>
+
+        <a-sphere class="js--pickup js--interact tomaat" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>
+        <a-cylinder class="js--pickup js--interact burger" height="0.04" radius="0.2" position="-0.02897 1.18912 0.62695" color="brown"></a-cylinder>
+        
 
         
         <!-- Starting Screen -->
