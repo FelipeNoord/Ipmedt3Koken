@@ -73,8 +73,8 @@
           //this.remove zorgt ervoor dat this (this refereerd naar pickups[i], dus de burger die je oppakt) word verwijderd (het burger element wat nog niet is opgepakt 
           //word verwijderd en er word een nieuwe burger gemaakt als child in camera)
 
-          }else if(hold == null && pickups[i].classList.contains("tomaat")){
-            //dit werkt hetzelfde als burger maar dan word er gecheckt of het element als class "tomaat" heeft ipv burger, dit veranderd dus per element wat je wilt oppakken
+          }else if(hold == null && pickups[i].classList.contains("broodje")){
+            //dit werkt hetzelfde als burger maar dan word er gecheckt of het element als class "broodje" heeft ipv burger, dit veranderd dus per element wat je wilt oppakken
             pickups[i].setAttribute("id", "js--hold");
     
             camera.innerHTML += pickups[i].outerHTML;
@@ -105,45 +105,44 @@
         const snijplank = document.getElementById("snijplank");
 
 
-        for (let i = 0; i < placeholders.length; i++) {
-          placeholders[i].addEventListener("click", function(evt){  //placeholders[i] is een array van alle elementen die als class js--placeholder hebben
+        for (let j = 0; j < placeholders.length; j++) {
+          placeholders[j].addEventListener("click", function(evt){  //placeholders[j] is een array van alle elementen die als class js--placeholder hebben
+            if(hold == "true" && pickups[0].classList.contains("burger")){
+              console.log(pickups)
+              // als hetgeen wat is opgepakt als class "burger" heeft voert het deze if uit
 
-
-            for (let j = 0; i < pickups.length; j++){
-              if(hold == "true" && pickups[j].classList.contains("burger")){
-                // als hetgeen wat is opgepakt als class "burger" heeft voert het deze if uit
-  
-                let box = document.createElement("a-entity")
-                //<a-entity pickup class="js--interact js--pickup burger" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
-                box.setAttribute("class", "js--pickup js--interact burger");
-                box.setAttribute("id", "burger");
-                box.setAttribute("gltf-model", "#burger-glb");
-                box.setAttribute("scale",  "0.3 0.3 0.3")
-                box.setAttribute("position", {x: this.getAttribute("position").x, y:"1.177", z: this.getAttribute("position").z });
-                console.log(box)
-                //hierboven wordt een nieuwe element gemaakt dat de attributen van hetgeen wat je vast hebt kopieert.
-                scene.appendChild(box); // hier word het nieuwe element toegevoegd aan de scene
-                document.getElementById("js--hold").remove(); // het element met id "js--hold" word verwijderd, dus het element in de camera word verwijderd
-                addListeners();
-                hold = null; //hold weer op null
-              }else if(hold == "true" && pickups[j].classList.contains("tomaat")){
-                let box = document.createElement("a-sphere")
-                box.setAttribute("class", "js--pickup js--interact tomaat");
-                box.setAttribute("color", pickups[j].getAttribute("color"));
-                box.setAttribute("height", pickups[j].getAttribute("height"));
-                box.setAttribute("radius",  pickups[j].getAttribute("radius"))
-                box.setAttribute("position", {x: this.getAttribute("position").x, y:"1.14", z: this.getAttribute("position").z });
-                scene.appendChild(box);
-                document.getElementById("js--hold").remove();
-                addListeners();
-                hold = null;
-              }
+              let box = document.createElement("a-entity")
+              //<a-entity pickup class="js--interact js--pickup burger" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+              box.setAttribute("class", "js--pickup js--interact burger");
+              box.setAttribute("id", "burger");
+              box.setAttribute("gltf-model", "#burger-glb");
+              box.setAttribute("scale",  "0.3 0.3 0.3")
+              box.setAttribute("position", {x: this.getAttribute("position").x, y:"1.177", z: this.getAttribute("position").z });
+              console.log(box)
+              //hierboven wordt een nieuwe element gemaakt dat de attributen van hetgeen wat je vast hebt kopieert.
+              scene.appendChild(box); // hier word het nieuwe element toegevoegd aan de scene
+              document.getElementById("js--hold").remove(); // het element met id "js--hold" word verwijderd, dus het element in de camera word verwijderd
+              addListeners();
+              hold = null; //hold weer op null
+            }else if(hold == "true" && pickups[0].classList.contains("broodje")){
+              console.log(pickups)
+              let box = document.createElement("a-entity")
+              //<a-entity pickup class="js--interact js--pickup broodje" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
+              box.setAttribute("class", "js--pickup js--interact broodje");
+              box.setAttribute("id", "broodje");
+              box.setAttribute("gltf-model", "#broodje-glb");
+              box.setAttribute("scale",  "0.3 0.3 0.3")
+              box.setAttribute("position", {x: this.getAttribute("position").x, y:"1.177", z: this.getAttribute("position").z });
+              console.log(box)
+              scene.appendChild(box);
+              document.getElementById("js--hold").remove();
+              addListeners();
+              hold = null;
             }
-
           });
           }
           
-      //tomaat
+      //broodje
 
       },
     update: function () {
