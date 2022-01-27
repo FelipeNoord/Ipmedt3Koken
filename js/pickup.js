@@ -10,7 +10,7 @@
       
         let hold = null;
         const knife = '<a-entity gltf-model="#chefsmes-glb" id="js--knife" rotation="-45 80 50" position="0.3 -0.2 -0.3" scale="0.1 0.1 0.1"></a-entity>';
-        const tomaat = '<a-entity pickup class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="0.2 -0.2 -0.5"></a-entity>'
+        const tomaat = '<a-entity pickup class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="0.2 -0.2 -0.5"><a-entity gltf-model=#tomaat_stengel-glb></a-entity></a-entity>'
         const bun = '<a-entity pickup class="js--interact js--cutable" id="js--broodje" gltf-model="#broodje-glb" position="0.2 -0.2 -0.5" scale="0.3 0.3 0.3"></a-entity>';
 
 //burger
