@@ -65,16 +65,16 @@
           camera.children[1].setAttribute("position", "1 -1 -3")
           hold = "true";
           this.remove();
-          }else if(hold == null && pickups[i].classList.contains("tomaat")){
-            pickups[i].setAttribute("id", "js--hold");
+          // }else if(hold == null && pickups[i].classList.contains("tomaat")){
+          //   pickups[i].setAttribute("id", "js--hold");
     
-            camera.innerHTML += pickups[i].outerHTML;
-            camera.children[1].setAttribute("position", "1 -1 -3")
-            hold = "true";
-            this.remove();
+          //   camera.innerHTML += pickups[i].outerHTML;
+          //   camera.children[1].setAttribute("position", "1 -1 -3")
+          //   hold = "true";
+          //   this.remove();
 
-          }
-        });
+          // 
+        }});
         }
       }
 
@@ -100,17 +100,17 @@
               document.getElementById("js--hold").remove();
               addListeners();
               hold = null;
-            }else if(hold == "true" && pickups[i].classList.contains("tomaat")){
-              let box = document.createElement("a-sphere")
-              box.setAttribute("class", "js--pickup js--interact tomaat");
-              box.setAttribute("color", pickups[i].getAttribute("color"));
-              box.setAttribute("height", pickups[i].getAttribute("height"));
-              box.setAttribute("radius",  pickups[i].getAttribute("radius"))
-              box.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
-              snijplank.appendChild(box);
-              document.getElementById("js--hold").remove();
-              addListeners();
-              hold = null;
+            // }else if(hold == "true" && pickups[i].classList.contains("tomaat")){
+            //   let box = document.createElement("a-sphere")
+            //   box.setAttribute("class", "js--pickup js--interact tomaat");
+            //   box.setAttribute("color", pickups[i].getAttribute("color"));
+            //   box.setAttribute("height", pickups[i].getAttribute("height"));
+            //   box.setAttribute("radius",  pickups[i].getAttribute("radius"))
+            //   box.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
+            //   snijplank.appendChild(box);
+            //   document.getElementById("js--hold").remove();
+            //   addListeners();
+            //   hold = null;
 
 
             }
