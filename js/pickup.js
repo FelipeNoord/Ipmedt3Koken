@@ -6,26 +6,41 @@
         // TELEPORTEREN //
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
+        const tomato = document.getElementById("js--tomaat");
         let hold = null;
-        console.log("hallo");
+        const knife = '<a-entity gltf-model="#chefsmes-glb" id="mes" rotation="-45 80 50" position="0.3 -0.2 -0.3" scale="0.1 0.1 0.1"></a-entity>';
 
       function addListeners(){
         
         for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener("click", function(evt){
-          if(hold == null){
-          camera.innerHTML += '<a-entity gltf-model="#chefsmes-glb" id="mes" rotation="-45 80 50" position="0.3 -0.2 -0.3" scale="0.1 0.1 0.1"></a-entity>';
-          hold = "box";
-          console.log(this);
+          if(hold == null && pickups[i].getAttribute("id") == "mes"){
+          camera.innerHTML += knife;
+          hold = "knife";
+          console.log(hold);
           this.remove();
           }
         });
+        tomato.addEventListener("click", function(evt){
+          if(hold === "knife" && tomato.getAttribute("id")){
+            camera.children[1].remove();
+            tomato.outerHTML += knife;
+            const cutKnife = document.getElementById("mes");
+            cutKnife.setAttribute('animation__pos', "property: position; from: 1.2 1.20 0.25; to: 0.8 1.20 0.25; dur: 1000;");
+            cutKnife.setAttribute("animation__rot", "property: rotation; from: 0 -90 0; to: 0 -90 30; dur: 200; loop:5");
+            hold = tomatoCut;
+          }
+        })
+
+
         }
       }
 
+ 
+
       addListeners();
 
-
+      
 
         const placeholders = document.getElementsByClassName('js--placeholder');
         let scene = document.getElementById('js--scene');
