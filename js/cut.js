@@ -15,4 +15,4 @@ AFRAME.registerComponent('cut', {
     remove: function () {},
     pause: function () {},
     play: function () {}
-  });s
+  });
