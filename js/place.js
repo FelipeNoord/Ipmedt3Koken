@@ -1,32 +1,32 @@
-AFRAME.registerComponent('place', {
-    schema: {},
-    init: function () {
+// AFRAME.registerComponent('place', {
+//     schema: {},
+//     init: function () {
 
-    const camera = document.getElementById("js--camera");
-    const cuttingBoard = document.getElementById("js--cuttingBoard");
+//     const camera = document.getElementById("js--camera");
+//     const cuttingBoard = document.getElementById("js--cuttingBoard");
 
-    cuttingBoard.addEventListener("click", function(evt){
+//     cuttingBoard.addEventListener("click", function(evt){
         
-        if(camera.children[1].classList.contains("js--cutable")){
-            camera.children[1].setAttribute("id", "js--cuttingTomato")
-            cuttingBoard.outerHTML += camera.children[1].outerHTML;
-            let tomato = document.getElementById("js--cuttingtomato");
-            camera.children[1].remove();
-            setTimeout(tomatoMove = (evt) => {
-                tomato.setAttribute("position", "0.6 1.16 0.6")
-                console.log(tomato);
-            }, 1000)
-            
-            console.log();
-            console.log("hallo");
-        }
-    })
+//         if(camera.children[1].classList.contains("js--cutable")){
+
+//             cuttingBoard.innerHTML += camera.children[1].outerHTML;
+//             cuttingBoard.setAttribute("class", "");
+//             let product = cuttingBoard.children[0];
+//             camera.children[1].remove();
+//             product.setAttribute("position", "0 0.05 0");
+//             if(product.getAttribute("id") == "js--tomato"){
+//                 product.setAttribute("scale", "0.1 0.1 0.1");
+//                 console.log(product);
+                
+//             }
+//         }
+//     })
     
 
-    },
-    update: function () {},
-    tick: function () {},
-    remove: function () {},
-    pause: function () {},
-    play: function () {}
-  });
+//     },
+//     update: function () {},
+//     tick: function () {},
+//     remove: function () {},
+//     pause: function () {},
+//     play: function () {}
+//   });
