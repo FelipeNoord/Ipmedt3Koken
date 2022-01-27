@@ -16,7 +16,7 @@
 //burger
       function addListeners(){
         
-        
+
         for (let i = 1; i < pickups.length; i++){
 
           pickups[i].addEventListener("click", function(evt){
@@ -33,8 +33,6 @@
             if(hold == null && pickups[i].getAttribute("id") == "js--tomato"){
             camera.innerHTML += tomaat;
             hold = "tomato";
-            
-            
             this.remove();
             
             
