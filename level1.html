@@ -7,7 +7,6 @@
     <script src="js/pickup.js"></script>
     <script src="js/cut.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/pickup.js"></script>
     <script src="js/levelselect.js"></script>
     <title>Document</title>
 </head>
@@ -32,7 +31,7 @@
             <a-asset-item id="burger-glb" src="blendermodels/burger.glb"></a-asset-item>
         </a-assets> 
 
-        <a-camera id="js--camera" pickup>
+        <a-camera id="js--camera">
             <a-entity
               animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
               animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -68,7 +67,7 @@
 
         <a-entity id="focus" position="0 2 0"></a-entity>
 
-        <a-entity gltf-model="#keuken-glb" light="type: directional" position="0 0 -1.15" rotation="0 180 0" scale="1 0.9 1"></a-entity>
+        <a-entity gltf-model="#keuken-glb" position="0 0 -1.15" rotation="0 180 0" scale="1 0.9 1"></a-entity>
 
         <!-- Fridge -->
         <a-entity gltf-model="#koelkast-glb" position="3 0 -1" scale="0.5 0.5 0.5">
@@ -76,15 +75,14 @@
         </a-entity>
 
         <!-- Food contents -->
-        <a-entity pickup class="js--interact js--pickup" id="js--tomaat" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
+        <a-entity cut class="js--interact js--pickup" id="js--tomaat" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
             <a-entity gltf-model=#tomaat_stengel-glb></a-entity>
         </a-entity>
 
-        <a-entity pickup class="js--interact js--pickup" id="mes" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
         <a-entity pickup class="js--placeholder js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
 
         <!--snijplank en mes-->
-        <a-entity pickup class="js--interact" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="js--knife" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
         <a-entity pickup class="js--placeholder js--interact" id="snijplank" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
 
         <!--ingredienten-->
