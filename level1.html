@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/pickup.js"></script>
+    <script src="js/cut.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/pickup.js"></script>
     <script src="js/levelselect.js"></script>
@@ -12,7 +13,7 @@
 </head>
 <body>
 
-    <a-scene>
+    <a-scene id="js--scene" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
         <a-assets>
             <a-asset-item id="eiland-glb" src="blendermodels/keukeneiland.gltf"></a-asset-item>
             <a-asset-item id="raam-glb" src="blendermodels/raam.glb"></a-asset-item>
@@ -20,9 +21,16 @@
             <a-asset-item id="koelkast_deur-glb" src="blendermodels/koelkast_deur.glb"></a-asset-item>
             <a-asset-item id="chefsmes-glb" src="blendermodels/chefsmes.glb"></a-asset-item>
             <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
+            <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item> <!-- https://free3d.com/3d-model/plate--81292.html -->
+            <a-asset-item id="snijplank-glb" src="blendermodels/snijplank.glb"></a-asset-item>
+            
+            <!--hamburger-->
+            <a-asset-item id="broodje-glb" src="blendermodels/broodje.glb"></a-asset-item>
+            <a-asset-item id="slablaadje-glb" src="blendermodels/slablaadje.glb"></a-asset-item>
+            <a-asset-item id="burger-glb" src="blendermodels/burger.glb"></a-asset-item>
         </a-assets> 
 
-        <a-camera id="js--camera">
+        <a-camera id="js--camera" pickup>
             <a-entity
               animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
               animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -65,9 +73,20 @@
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
-        <a-entity pickup class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity pickup class="js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
+
+        <!--snijplank en mes-->
+        <a-entity pickup class="js--interact" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity pickup class="js--placeholder js--interact" id="snijplank" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
+
+        <!--ingredienten-->
+        <a-sphere class="js--pickup js--interact tomaat" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>
+        <a-entity pickup class="js--interact js--pickup" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="slablaadje" gltf-model="#slablaadje-glb" position="1 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-cylinder class="js--pickup js--interact burger" height="0.04" radius="0.2" position="-0.02897 1.18912 0.62695" color="brown"></a-cylinder>
+
+
     </a-scene>
 </body>
-
-
 </html>
