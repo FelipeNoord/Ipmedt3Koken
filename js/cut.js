@@ -1,19 +1,19 @@
 AFRAME.registerComponent('cut', {
     schema: {},
     init: function () {
-        let holding = document.getElementsById("js--hold");
-        const mes = document.getElementsByClassName("mes");
-        const cuttable = document.getElementsByClassName("js--cuttable");
+        let mes = document.getElementsByClassName("mes");
+        let cuttable = document.getElementsByClassName("js--cuttable");
 
-        cuttable.addEventListener("click", async function(evt){
             for (let i = 0; i < cuttable.length; i++) {
-              if(mes.classList){
-
+                cuttable[i].addEventListener("click", function(evt){
+                 if(mes[0].id == "js--hold" && cuttable[i].classList.contains("tomaat")){
+                    console.log("ja man")
+                  cuttable[i].setAttribute("color", "blue");
               }
-    
-    
             }
-          })
+    
+                )}
+          
     
 
 

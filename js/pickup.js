@@ -47,7 +47,9 @@
         // TELEPORTEREN //
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
-
+        const knife = '<a-entity class="js--interact js--pickup mes" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>';
+        const tomaat = '<a-sphere class="js--pickup js--interact tomaat js--cuttable" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>';
+        const burger = '<a-cylinder class="js--pickup js--interact burger" height="0.04" radius="0.2" position="-0.02897 1.18912 0.62695" color="brown"></a-cylinder>';
 
         let hold = null;
         console.log("hallo");
@@ -110,25 +112,37 @@
             if(hold == "true" && pickups[i].classList.contains("burger")){
               // als hetgeen wat is opgepakt als class "burger" heeft voert het deze if uit
 
-              let box = document.createElement("a-cylinder")
-              box.setAttribute("class", "js--pickup js--interact burger");
-              box.setAttribute("color", pickups[i].getAttribute("color"));
-              box.setAttribute("height", pickups[i].getAttribute("height"));
-              box.setAttribute("radius",  pickups[i].getAttribute("radius"))
-              box.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
+              let burg = document.createElement("a-cylinder")
+              burg.setAttribute("class", "js--pickup js--interact burger");
+              burg.setAttribute("color", pickups[i].getAttribute("color"));
+              burg.setAttribute("height", pickups[i].getAttribute("height"));
+              burg.setAttribute("radius",  pickups[i].getAttribute("radius"));
+              burg.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
               //hierboven wordt een nieuwe element gemaakt dat de attributen van hetgeen wat je vast hebt kopieert.
-              scene.appendChild(box); // hier word het nieuwe element toegevoegd aan de scene
+              scene.appendChild(burg); // hier word het nieuwe element toegevoegd aan de scene
               document.getElementById("js--hold").remove(); // het element met id "js--hold" word verwijderd, dus het element in de camera word verwijderd
               addListeners();
               hold = null; //hold weer op null
             }else if(hold == "true" && pickups[i].classList.contains("tomaat")){
-              let box = document.createElement("a-sphere")
-              box.setAttribute("class", "js--pickup js--interact tomaat");
-              box.setAttribute("color", pickups[i].getAttribute("color"));
-              box.setAttribute("height", pickups[i].getAttribute("height"));
-              box.setAttribute("radius",  pickups[i].getAttribute("radius"))
-              box.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
-              scene.appendChild(box);
+              let tomaat = document.createElement("a-sphere")
+              tomaat.setAttribute("class", "js--pickup js--interact tomaat");
+              tomaat.setAttribute("color", pickups[i].getAttribute("color"));
+              tomaat.setAttribute("height", pickups[i].getAttribute("height"));
+              tomaat.setAttribute("radius",  pickups[i].getAttribute("radius"))
+              tomaat.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
+              scene.appendChild(tomaat);
+              document.getElementById("js--hold").remove();
+              addListeners();
+              hold = null;
+            }else if(hold == "true" && pickups[i].classList.contains("mes")){
+              let scherp = document.createElement("a-entity")
+              scherp.setAttribute("class", "js--pickup js--interact mes");
+              scherp.setAttribute("gltf-model", pickups[i].getAttribute("gltf-model"));
+              scherp.setAttribute("metalness", pickups[i].getAttribute("metalness"));
+              scherp.setAttribute("roughness",  pickups[i].getAttribute("roughness"))
+              scherp.setAttribute("rotation",  pickups[i].getAttribute("rotation"))
+              scherp.setAttribute("position", {x: this.getAttribute("position").x, y: "0.5", z: this.getAttribute("position").z });
+              scene.appendChild(scherp);
               document.getElementById("js--hold").remove();
               addListeners();
               hold = null;
