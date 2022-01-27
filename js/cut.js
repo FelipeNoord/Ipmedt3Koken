@@ -13,11 +13,15 @@ AFRAME.registerComponent('cut', {
           if(hold === "knife" && tomato.getAttribute("id") == "js--tomaat"){
             camera.children[1].remove();
             console.log("hallo");
+            
+            tomato.outerHTML += knife;
             const cutKnife = document.getElementById("js--knife");
-            tomato.outerHTML += cutKnife;
-            console.log(cutKnife);
             cutKnife.setAttribute('animation__pos', "property: position; from: 1.2 1.20 0.25; to: 0.8 1.20 0.25; dur: 1000;");
             cutKnife.setAttribute("animation__rot", "property: rotation; from: 0 -90 0; to: 0 -90 30; dur: 200; loop:5");
+            
+            setTimeout(returnKnife = () =>{
+              cutKnife.setAttribute
+            }, )
           }
         });
     

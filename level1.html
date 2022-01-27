@@ -6,6 +6,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="js/pickup.js"></script>
     <script src="js/cut.js"></script>
+    <script src="js/place.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/levelselect.js"></script>
     <title>Document</title>
@@ -36,7 +37,7 @@
               animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
               animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
               animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-              cursor = "fuse: true; fuseTimeout: 2000"
+              cursor = "fuse: true; fuseTimeout: 1500;"
               material = "color: black; shader: flat"
               geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
               position = "0 0 -0.5"
@@ -75,18 +76,18 @@
         </a-entity>
 
         <!-- Food contents -->
-        <a-entity cut class="js--interact js--pickup" id="js--tomaat" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
-            <a-entity gltf-model=#tomaat_stengel-glb></a-entity>
+        <a-entity pickup class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
+            <!-- <a-entity gltf-model=#tomaat_stengel-glb></a-entity> -->
         </a-entity>
 
         <a-entity pickup class="js--placeholder js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
 
         <!--snijplank en mes-->
         <a-entity pickup class="js--interact js--pickup" id="js--knife" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
-        <a-entity pickup class="js--placeholder js--interact" id="snijplank" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
+        <a-entity pickup place class="js--placeholder js--interact" id="js--cuttingBoard" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
 
         <!--ingredienten-->
-        <a-sphere class="js--pickup js--interact tomaat" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>
+        <a-sphere class="js--pickup js--interact js--cutable" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>
         <a-entity pickup class="js--interact js--pickup" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
         <a-entity pickup class="js--interact js--pickup" id="slablaadje" gltf-model="#slablaadje-glb" position="1 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
         <a-entity pickup class="js--interact js--pickup burger" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
