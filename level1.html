@@ -22,6 +22,11 @@
             <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
             <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item> <!-- https://free3d.com/3d-model/plate--81292.html -->
             <a-asset-item id="snijplank-glb" src="blendermodels/snijplank.glb"></a-asset-item>
+            
+            <!--hamburger-->
+            <a-asset-item id="broodje-glb" src="blendermodels/broodje.glb"></a-asset-item>
+            <a-asset-item id="slablaadje-glb" src="blendermodels/slablaadje.glb"></a-asset-item>
+            <a-asset-item id="burger-glb" src="blendermodels/burger.glb"></a-asset-item>
         </a-assets> 
 
         <a-camera id="js--camera">
@@ -69,9 +74,14 @@
 
         <a-entity pickup class="js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
 
-        <a-entity pickup class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
+        <!--snijplank en mes-->
+        <a-entity pickup class="js--interact" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
         <a-entity pickup class="js--interact" id="snijplank" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
 
+        <!--ingredienten-->
+        <a-entity pickup class="js--interact js--pickup" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="slablaadje" gltf-model="#slablaadje-glb" position="1 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
 
 
     </a-scene>
