@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="js/pickup.js"></script>
     <script src="js/cut.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/levelselect.js"></script>
@@ -23,7 +22,7 @@
             <a-asset-item id="tomaat-s-glb" src="blendermodels/tomaat.glb"></a-asset-item>
         </a-assets> 
 
-        <a-camera pickup id="js--camera" position="-0.5 1.5 0">
+        <a-camera id="js--camera" position="-0.5 1.5 0">
 
         <a-cursor tp cut
     
@@ -89,6 +88,26 @@
         <a-plane levelselect class="js--interact" id="js--level1" height="0.4" position="0 2.35 -1.4" text="value: Level 1; color: black; align: center; width: 4;"></a-plane>
         <a-plane levelselect class="js--interact" id="js--level2" height="0.4" position="0 1.85 -1.4" text="value: Level 2; color: black; align: center; width: 4;"></a-plane>
         <a-plane levelselect class="js--interact" id="js--level3" height="0.4" position="0 1.35 -1.4" text="value: Level 3; color: black; align: center; width: 4;"></a-plane>
+
+  
+        <a-plane class="tv" material="color: #000000" geometry="width: 1.5; height: 1.3" position="0 2 4" rotation="0 180 0">
+            <a-entity class="recept" text="value: Soep 4 personen"  position="0 0.56 0" scale="1 1.81 1"></a-entity>
+            <a-entity class="recept" text="value: - Snipper de ui
+            - Snij de knoflook
+            - Snij de tomaat
+            - Verhit de olie in de pan
+            - Fruit de ui en de knoflook
+            - Voeg de gesneden tomaat toe
+            - Voeg het water toe
+            - Kook het geheel op laag vuur voor 20 minuten
+            - Voeg basilicum toe
+            - Voeg slagroom toe
+            - Pureer kort met een staafmixer
+            - Verhit soep 5 min tegen kook aan
+            - Breng op smaak met peper en zout
+            - Verdeel over borden
+            - Schep er creme fraiche op; lineHeight: 60"></a-entity>
+        </a-plane>
 
 
     </a-scene>

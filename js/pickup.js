@@ -49,7 +49,7 @@
         const camera = document.getElementById("js--camera");
         const knife = '<a-entity class="js--interact js--pickup mes" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>';
         const tomaat = '<a-sphere class="js--pickup js--interact tomaat js--cuttable" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>';
-        const burger = '<a-cylinder class="js--pickup js--interact burger" height="0.04" radius="0.2" position="-0.02897 1.18912 0.62695" color="brown"></a-cylinder>';
+      
 
         let hold = null;
         console.log("hallo");
@@ -140,7 +140,7 @@
               scherp.setAttribute("gltf-model", pickups[i].getAttribute("gltf-model"));
               scherp.setAttribute("metalness", pickups[i].getAttribute("metalness"));
               scherp.setAttribute("roughness",  pickups[i].getAttribute("roughness"))
-              scherp.setAttribute("rotation",  pickups[i].getAttribute("rotation"))
+              scherp.setAttribute("rotation",  pickups[i].getAttribute("rotation") )
               scherp.setAttribute("position", {x: this.getAttribute("position").x, y: "0.5", z: this.getAttribute("position").z });
               scene.appendChild(scherp);
               document.getElementById("js--hold").remove();
