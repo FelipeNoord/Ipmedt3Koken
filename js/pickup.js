@@ -96,7 +96,7 @@
               box.setAttribute("height", pickups[i].getAttribute("height"));
               box.setAttribute("radius",  pickups[i].getAttribute("radius"))
               box.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
-              snijplank.appendChild(box);
+              scene.appendChild(box);
               document.getElementById("js--hold").remove();
               addListeners();
               hold = null;
@@ -107,7 +107,7 @@
               box.setAttribute("height", pickups[i].getAttribute("height"));
               box.setAttribute("radius",  pickups[i].getAttribute("radius"))
               box.setAttribute("position", {x: this.getAttribute("position").x, y:"0.5", z: this.getAttribute("position").z });
-              snijplank.appendChild(box);
+              scene.appendChild(box);
               document.getElementById("js--hold").remove();
               addListeners();
               hold = null;
