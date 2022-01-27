@@ -6,31 +6,51 @@
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
         const kitchenKnife = document.getElementById("pickupknife");
-        let hold = false;
+        const tomato = document.getElementById("js--tomato");
+      
+        let hold = null;
         const knife = '<a-entity gltf-model="#chefsmes-glb" id="js--knife" rotation="-45 80 50" position="0.3 -0.2 -0.3" scale="0.1 0.1 0.1"></a-entity>';
-        const tomaat = '<a-entity pickup class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="0.2 -0.2 -0.5"><a-entity gltf-model=#tomaat_stengel-glb></a-entity></a-entity>'
+        const tomaat = '<a-entity pickup class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="0.2 -0.2 -0.5"></a-entity>'
+        const bun = '<a-entity pickup class="js--interact js--cutable" id="js--broodje" gltf-model="#broodje-glb" position="0.2 -0.2 -0.5" scale="0.3 0.3 0.3"></a-entity>';
 
 //burger
       function addListeners(){
         
-        for (let i = 0; i < pickups.length; i++){
+        
+        for (let i = 1; i < pickups.length; i++){
 
           pickups[i].addEventListener("click", function(evt){
-            if(hold === false && pickups[i].getAttribute("id") == "js--knife"){
+            if(hold == null && pickups[i].getAttribute("id") == "js--knife"){
+            
             camera.innerHTML += knife;
             this.remove();
-            hold = true;
+            hold = "knife";
             console.log(hold);
             }
           });
 
           pickups[i].addEventListener("click", function(evt){
-            if(hold === false && pickups[i].getAttribute("id") == "js--tomato"){
+            if(hold == null && pickups[i].getAttribute("id") == "js--tomato"){
             camera.innerHTML += tomaat;
-            hold = true;
+            hold = "tomato";
+            
+            
             this.remove();
+            
+            
             }
-          })
+          });
+
+
+
+          pickups[i].addEventListener("click", function(evt){
+            if(hold === false && pickups[i].getAttribute("id") == "js--broodje"){
+              camera.innerHTML += bun;
+              this.remove();
+              hold = true;
+            }
+          });
+
 
 
 

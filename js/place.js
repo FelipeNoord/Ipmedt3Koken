@@ -7,7 +7,7 @@ AFRAME.registerComponent('place', {
 
     cuttingBoard.addEventListener("click", function(evt){
         
-        if(camera.children[1].getAttribute("class") === "js--cutable"){
+        if(camera.children[1].classList.contains("js--cutable")){
             // console.log(this);
             // cuttingBoard.innerHTML += `${camera.childeren[1]}`;
             console.log();
