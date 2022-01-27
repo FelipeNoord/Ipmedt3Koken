@@ -1,13 +1,21 @@
 AFRAME.registerComponent('cut', {
     schema: {},
     init: function () {
+        let holding = document.getElementsById("js--hold");
+        const mes = document.getElementsByClassName("mes");
+        const cuttable = document.getElementsByClassName("js--cuttable");
 
-        document.getElementById("snijplank").addEventListener("click", function(evt){
+        cuttable.addEventListener("click", async function(evt){
+            for (let i = 0; i < cuttable.length; i++) {
+              if(mes.classList){
 
-            if(document.getElementById("snijplank").children[0].id == 'tomato'){
-                document.getElementById("snijplank").innerHTML = '<a-box id="tomato_cut" color="blue" scale="0.5 50 0.5"></a-box><a-entity light="type: spot; color: #45B3E0; intensity: 0.3; angle: 7; target: #snijplank;" scale="0.1 0.1 0.1" position="0 300 0"></a-entity>'
+              }
+    
+    
             }
-        })
+          })
+    
+
 
     },
     update: function () {},
