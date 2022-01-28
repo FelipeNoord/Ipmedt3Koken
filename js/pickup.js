@@ -5,7 +5,7 @@
         // TELEPORTEREN //
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
-        var j = 0;
+  
         const uiText = document.getElementById("js--uiText");
 
         function sleep(ms) {
@@ -20,7 +20,7 @@
         textToSpeech(uiText)
 //burger
       function addListeners(){
-        console.log(j);
+        var j = 0;
         for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener("click", async function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben
 
@@ -108,6 +108,7 @@
           if(pickups[i].id == "slablaadje" && j == 6){
             document.getElementById("slablaadje").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #tomaat;")
+            
             //burger kleur
             j++;
           }if(pickups[i].id == "tomaat"  && j == 7){
@@ -127,7 +128,7 @@
             document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: -90 -90 0; delay: 1000;");
             document.getElementById("gesnedentomaat").setAttribute("visible", "true");
             document.getElementById("tomaat").setAttribute("visible", "false");
-            document.getElementById("tv").setAttribute("text", "value: Top gedaan!\nleg hem nu maar op het bord; color: black; align: center;color: black; align: center;")
+            
             j++
           }if(pickups[i].id == "gesnedentomaat"  && j == 9){
             document.getElementById("gesnedentomaat").setAttribute("position", "-0.5 1.2 0.55");
@@ -151,20 +152,16 @@
             document.getElementById("ketchup").setAttribute("position", "-0.5 2 0.55");
             document.getElementById("ketchup").setAttribute("rotation", "180 0 0");
             document.getElementById("ketchup").setAttribute("animation", "property: position; from: -0.5 2.2 0.55; to: -0.5 2 0.55; dur: 1000; easing: easeInOutElastic; loop: 3");
-            await sleep(5000);
             document.getElementById("ketchup").setAttribute("position", "0.3 1.14 1.4");
             document.getElementById("ketchup").setAttribute("rotation", "0 0 0");
 
             uiText.setAttribute("value", "Zo he die burger ruikt heerlijk, dat wordt niet uithongeren vandaag!");
             textToSpeech(uiText);
-            await sleep(500);
+
 
             document.getElementById("bovenkantbroodje").setAttribute("animation__pos", "property: position; from: -0.28 0.66 0; to: -0.185 -0.666 0; delay: 1000");
             document.getElementById("bovenkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 0 90; to: 0 0 -90; delay: 1000");
-            //text
-            document.getElementById("tv").setAttribute("text", "value: Smakelijk eten!; color: black; align: center;color: black; align: center;")
-            await sleep(5000)
-            document.getElementById("tv").setAttribute("text", "value: Die burger ruikt heerlijk!; color: black; align: center;color: black; align: center;")
+ 
             j++;
           }
       });
