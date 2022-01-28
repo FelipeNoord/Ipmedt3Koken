@@ -31,9 +31,6 @@
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #olie;")
             uiText.setAttribute("value", "Lekker bezig! Nu kunnen we de burger bakken klik maar op de burger!")
             textToSpeech(uiText);
-
-            
-            
             document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
              document.getElementById("olie").setAttribute("rotation", "0 0 0");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
