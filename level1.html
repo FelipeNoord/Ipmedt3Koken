@@ -25,13 +25,14 @@
             <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
             <a-asset-item id="tomaat-glb" src="blendermodels/tomato.glb"></a-asset-item>
             <a-asset-item id="tomaat_stengel-glb" src="blendermodels/tomatostengel.glb"></a-asset-item>
-            <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item> <!-- https://free3d.com/3d-model/plate--81292.html -->
+            <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item>
             <a-asset-item id="snijplank-glb" src="blendermodels/snijplank.glb"></a-asset-item>
-            <a-asset-item id="tomaat-glb" src="blendermodels/tomaat.glb"></a-asset-item>
             <a-asset-item id="ketchup-glb" src="blendermodels/ketchup.glb"></a-asset-item>
             <a-asset-item id="olie-glb" src="blendermodels/olie.glb"></a-asset-item>
             <a-asset-item id="pan-glb" src="blendermodels/pan.glb"></a-asset-item>
             <a-asset-item id="frame-glb" src="blendermodels/frame.glb"></a-asset-item>
+            <a-asset-item id="plakjes-glb" src="blendermodels/plakjes_tomaat.glb"></a-asset-item>
+
             <a-asset-item id="bovenkantbroodje-glb" src="blendermodels/broodje_bovenkant.glb"></a-asset-item>
             <a-asset-item id="onderkantbroodje-glb" src="blendermodels/broodje_onderkant.glb"></a-asset-item>
             
@@ -90,18 +91,13 @@
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
-        <!-- Food contents -->
-        <a-entity class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
-            <a-entity gltf-model=#tomaat_stengel-glb></a-entity>
-        </a-entity>
-
         <a-entity class="js--placeholder js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
 
         <!--snijplank en mes-->
         <a-entity pickup class="js--interact js--pickup" id="mes" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="90 -90 0" position="0.146 1.155 0.475" scale="0.1 0.1 0.1"></a-entity>
         <a-entity place class="js--placeholder js--interact" id="js--cuttingBoard" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
 
-        <a-text id="js--uiText" value="Hallo"></a-text>
+
 
         <!--ingredienten-->
         <a-entity pickup class="js--interact js--pickup" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
@@ -110,6 +106,7 @@
         <a-entity pickup class="js--interact js--pickup" id="tomaat" gltf-model="#tomaat-glb" position="0 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
         <a-entity pickup class="js--interact js--pickup" id="ketchup" gltf-model="#ketchup-glb" position="0.3 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
         <a-entity pickup class="js--interact js--pickup" id="olie" gltf-model="#olie-glb" position="0.6 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
+        
         <a-entity pickup class="js--interact js--pickup" id="gesnedenbroodje" scale="0.3 0.3 0.3" position="0.6 1.34 0.6" rotation="0 0 90" visible="false">
             <a-entity class="js--interact js--pickup" id="bovenkantbroodje" gltf-model="#bovenkantbroodje-glb" position="0 0.06 0" scale="1.05 1.05 1.05"></a-entity>
             <a-entity class="js--interact js--pickup" id="onderkantbroodje" gltf-model="#onderkantbroodje-glb" position="0 -0.06 0"></a-entity>
@@ -119,6 +116,12 @@
 
         <a-entity gltf-model="#frame-glb" position="4.99 2 1" rotation="0 180 0"></a-entity>
         <a-image cats id="cat" src="" position="4.99 2 1" rotation="0 90 0" scale="2 2 2"></a-image>
+        <a-entity pickup id="pan" gltf-model="#pan-glb" position="0.53 1.14 -1" scale="1 0.3 1" rotation="0 -20 0"></a-entity>  
+        <a-plane id="js--tv" rotation="0 180 0" material="color: white" height="1" width="2" position="0 2 3" >
+            <a-text id="js--uiText" value="Welkom bij lekker koken! We gaan vandaag een burger maken! We beginnen met wat olie in de pan doen! Klik maar op het flesje olie!" color="black" height="1" width="2" align="center" wrapCount="100"></a-text>
+        </a-plane>         
+   
+       
     </a-scene>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=EC55QW6T"></script>
 </body>
