@@ -29,6 +29,8 @@
             <a-asset-item id="ketchup-glb" src="blendermodels/ketchup.glb"></a-asset-item>
             <a-asset-item id="olie-glb" src="blendermodels/olie.glb"></a-asset-item>
             <a-asset-item id="pan-glb" src="blendermodels/pan.glb"></a-asset-item>
+            <a-asset-item id="frame-glb" src="blendermodels/frame.glb"></a-asset-item>
+            
             
             
             <!--hamburger-->
@@ -98,7 +100,8 @@
 
         <a-entity pickup id="pan" gltf-model="#pan-glb" position="0.53 1.14 -1" scale="1 0.3 1" rotation="0 -20 0"></a-entity>
 
-        <a-image cats id="cat" src="" position="4.9 2 1" rotation="0 90 0"></a-image>
+        <a-entity gltf-model="#frame-glb" position="4.99 2 1" rotation="0 180 0"></a-entity>
+        <a-image cats id="cat" src="" position="4.99 2 1" rotation="0 90 0" scale="2 2 2"></a-image>
     </a-scene>
 </body>
 </html>

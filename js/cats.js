@@ -16,7 +16,7 @@ AFRAME.registerComponent('cats', {
         
         updateCat = (data) =>{
         let image = data[0].url;
-        console.log(image);
+        console.log("url", image);
         frame.setAttribute('src', image);
         }
 
