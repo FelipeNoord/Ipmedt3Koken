@@ -5,7 +5,7 @@
         // TELEPORTEREN //
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
-        var j = 7;
+        var j = 0;
 
         function sleep(ms) {
           return new Promise(resolve => setTimeout(resolve, ms));
@@ -86,31 +86,30 @@
             j++;
           }if(pickups[i].id == "tomaat"  && j == 7){
             document.getElementById("tomaat").setAttribute("position", "0.6 1.17 0.6");
-            document.getElementById("tv").setAttribute("text", "value: Top gedaan!; color: black; align: center;color: black; align: center;")
-            await sleep(5000);
-            document.getElementById("tv").setAttribute("text", "value: Nu mag die op het broodje; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "mes" && j == 8){
             document.getElementById("mes").setAttribute("animation__pos" , "property: position; from: 0.7 1.25 0.3; to: 0.3 1.25 0.3; dur: 1500");
             document.getElementById("mes").setAttribute("animation__rot" , "property: rotation; from: 0 -90 30; to: 0 -90 0; loop: 4; dur: 250; easing: linear;");
             document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.5 1.25 0.333; to: 0.146 1.155 0.475; delay: 1000;");
             document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: 90 -90 0; delay: 1000;");
-            document.getElementById("tomaat").setAttribute("gltf-model", "#plakjes-glb");
+            document.getElementById("gesnedentomaat").setAttribute("visible", "true");
+            document.getElementById("tomaat").setAttribute("visible", "false");
+            document.getElementById("tv").setAttribute("text", "value: Top gedaan!; color: black; align: center;color: black; align: center;")
             j++
-          }if(pickups[i].id == "tomaat"  && j == 9){
-            document.getElementById("tomaat").setAttribute("position", "-0.5 1.2 0.55");
+          }if(pickups[i].id == "gesnedentomaat"  && j == 9){
+            document.getElementById("gesnedentomaat").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
             document.getElementById("tv").setAttribute("text", "value: Nu is de burger klaar met bakken; color: black; align: center;color: black; align: center;")
             await sleep(5000)
             document.getElementById("tv").setAttribute("text", "value: Die kan op het broodje; color: black; align: center;color: black; align: center;")
             j++;
-          }if(pickups[i].id == "burger"  && j == 9){
-            document.getElementById("burger").setAttribute("position", "-0.5 1.2 0.55");
+          }if(pickups[i].id == "burger"  && j == 10){
+            document.getElementById("burger").setAttribute("position", "-0.5 1.22 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #ketchup;")
             //text
             document.getElementById("tv").setAttribute("text", "value: Ketchup erbij; color: black; align: center;color: black; align: center;")
             j++;
-          }if(pickups[i].id == "ketchup"  && j == 10){
+          }if(pickups[i].id == "ketchup"  && j == 11){
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #slablaadje;")
             document.getElementById("ketchup").setAttribute("position", "-0.5 2 0.55");
             document.getElementById("ketchup").setAttribute("rotation", "180 0 0");
