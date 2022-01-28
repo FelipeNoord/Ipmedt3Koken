@@ -131,7 +131,7 @@
             uiText.setAttribute("value", "Pling Pling de burger is klaar met bakken haal em van het vuur en leg em op het broodje!");
             textToSpeech(uiText);
             //burger kleur
-            document.getElementById("burger").setAttribute("animation", "property: color; from: #af7a64 ; to: #aa8469; dur: 1;");
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #af7a64 ; to: #6B4637; dur: 1;");
             j++;
           }if(pickups[i].id == "burger"  && j == 10){
             
@@ -140,7 +140,6 @@
             uiText.setAttribute("value", "Zo nu nog even wat ketchup erbij! Smikkelen");
             textToSpeech(uiText);
             //burger kleur
-            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #aa8469; dur: 1;");
 
             j++;
           }if(pickups[i].id == "ketchup"  && j == 11){
@@ -152,7 +151,7 @@
             document.getElementById("ketchup").setAttribute("animation__kwegdra", "property: rotation; from: 180 0 0; to: 0 0 0; delay:2000; dur: 2000;");
             uiText.setAttribute("value", "Zo he die burger ruikt heerlijk, dat wordt niet uithongeren vandaag!");
             textToSpeech(uiText);
-            document.getElementById("bovenkantbroodje").setAttribute("animation__pos", "property: position; from: -0.28 0.66 0; to: -0.185 -0.666 0; delay: 2000");
+            document.getElementById("bovenkantbroodje").setAttribute("animation__pos", "property: position; from: -0.28 0.66 0; to: -0.27 -0.666 0; delay: 2000");
             document.getElementById("bovenkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 0 90; to: 0 0 -90; delay: 2000");
  
             j++;
