@@ -79,24 +79,20 @@
         </a-entity>
 
         <!-- Food contents -->
-        <a-entity pickup class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
+        <a-entity class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
             <a-entity gltf-model=#tomaat_stengel-glb></a-entity>
         </a-entity>
 
-        <a-entity pickup class="js--placeholder js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity class="js--placeholder js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
 
         <!--snijplank en mes-->
-        <a-entity pickup onclick="pickup()" class="js--interact js--pickup" id="js--knife" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
-        <a-entity pickup place class="js--placeholder js--interact" id="js--cuttingBoard" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="js--knife" gltf-model="#chefsmes-glb" metalness: 1; roughness: 0; rotation="76 -72 -1" position="0.3 1.196 0.475" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity place class="js--placeholder js--interact" id="js--cuttingBoard" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
 
         <!--ingredienten-->
-<<<<<<< HEAD
-        <a-entity pickup class="js--interact js--pickup" id="js--bun" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
-=======
-        <a-entity pickup class="js--interact js--pickup broodje" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
->>>>>>> Tom2
-        <a-entity pickup class="js--interact js--pickup" id="slablaadje" gltf-model="#slablaadje-glb" position="1 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
-        <a-entity pickup class="js--interact js--pickup burger" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity class="js--interact js--pickup broodje" id="js--bun" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity class="js--interact js--pickup" id="slablaadje" gltf-model="#slablaadje-glb" position="1 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity class="js--interact js--pickup burger" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
 
     </a-scene>
 </body>
