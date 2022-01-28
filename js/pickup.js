@@ -10,12 +10,16 @@
 
         console.log("hallo");
 
+        function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
 
 //burger
       function addListeners(){
         var j = 0;
         for (let i = 0; i < pickups.length; i++) {
-        pickups[i].addEventListener("click", function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben
+        pickups[i].addEventListener("click", async function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben
           if(pickups[i].id == "burger" && j == 0){
             document.getElementById("burger").setAttribute("position", "0.5 1.14 -1");
             j++;
@@ -40,7 +44,12 @@
             document.getElementById("burger").setAttribute("position", "-0.5 1.2 0.55");
             j++;
           }if(pickups[i].id == "ketchup"  && j == 7){
-            document.getElementById("ketchup").setAttribute("position", "-0.5 1.2 0.55");
+            document.getElementById("ketchup").setAttribute("position", "-0.5 2 0.55");
+            document.getElementById("ketchup").setAttribute("rotation", "180 0 0");
+            document.getElementById("ketchup").setAttribute("animation", "property: position; from: -0.5 2.2 0.55; to: -0.5 2 0.55; dur: 1000; easing: easeInOutElastic; loop: 3");
+            await sleep(5000);
+            document.getElementById("ketchup").setAttribute("position", "0.3 1.14 1.4");
+            document.getElementById("ketchup").setAttribute("rotation", "0 0 0");
             j++;
           }
       });
