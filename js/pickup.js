@@ -25,7 +25,7 @@
             document.getElementById("olie").setAttribute("animation__pos", "property:position; from: 0.6 1.14 1.4;  to: 0.53 2 -1; dur: 3000; easing: linear;");
             document.getElementById("olie").setAttribute("animation__rot", " property: rotation; from: 0 0 0; to: 180 0 0; delay: 2000; dur: 1000;");
             document.getElementById("olie").setAttribute("animation__shake", "property: position; from: 0.53 2 -1; to: 0.53 2.2 -1; delay: 3000; dur: 2000; easing: easeInOutSine; loop: 3");
-            document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #burger;")
+            document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #olie;")
             await sleep(10000);
             
             document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
