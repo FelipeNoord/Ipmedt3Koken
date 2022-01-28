@@ -6,8 +6,11 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="js/pickup.js"></script>
     <script src="js/cut.js"></script>
+    <script src="js/cats.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/levelselect.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -93,8 +96,9 @@
         <a-entity pickup class="js--interact js--pickup" id="ketchup" gltf-model="#ketchup-glb" position="0.3 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
         <a-entity pickup class="js--interact js--pickup" id="olie" gltf-model="#olie-glb" position="0.6 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
 
-        <a-entity pickup class="js--interact" id="pan" gltf-model="#pan-glb" position="0.53 1.18 -1" scale="1 0.3 1" rotation="0 270 0"></a-entity>
+        <a-entity pickup id="pan" gltf-model="#pan-glb" position="0.53 1.14 -1" scale="1 0.3 1" rotation="0 -20 0"></a-entity>
 
+        <a-image cats id="cat" src="" position="4.9 2 1" rotation="0 90 0"></a-image>
     </a-scene>
 </body>
 </html>
