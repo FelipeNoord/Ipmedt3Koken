@@ -14,7 +14,7 @@
 
 //burger
       function addListeners(){
-        var j = 0;
+        var j = 7;
         console.log(j);
         for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener("click", async function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben
@@ -80,7 +80,14 @@
           }if(pickups[i].id == "tomaat"  && j == 7){
             document.getElementById("tomaat").setAttribute("position", "0.6 1.17 0.6");
             j++;
-          }if(pickups[i].id == "tomaat"  && j == 8){
+          }if(pickups[i].id == "mes" && j == 8){
+            document.getElementById("mes").setAttribute("animation__pos" , "property: position; from: 0.7 1.25 0.3; to: 0.3 1.25 0.3; dur: 1500");
+            document.getElementById("mes").setAttribute("animation__rot" , "property: rotation; from: 0 -90 30; to: 0 -90 0; loop: 4; dur: 250; easing: linear;");
+            document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.5 1.25 0.333; to: 0.146 1.155 0.475; delay: 1000;");
+            document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: 90 -90 0; delay: 1000;");
+            document.getElementById("tomaat").setAttribute("gltf-model", "#plakjes-glb");
+            j++
+          }if(pickups[i].id == "tomaat"  && j == 9){
             document.getElementById("tomaat").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
             j++;
