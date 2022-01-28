@@ -84,14 +84,8 @@
             document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: 90 -90 0; delay: 1000;");
             //burger kleur
             document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #bc6257; dur: 1;");
-            // document.getElementById("mes").setAttribute("animation__pos" , "property: position; from: 0.8 1.25 0.3; to: 0.4 1.25 0.3; dur: 1000");
-            // document.getElementById("mes").setAttribute("animation__rot" , "property: rotation; from: 0 -90 30; to: 0 -90 0; loop: 4; dur: 250; easing: linear;");
-            // document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.4 1.25 0.3; to: 0.3 1.196 0.475; delay: 1000");
-            // document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: 76 -72 -1; delay: 1000;")
             uiText.setAttribute("value", "Leg het broodje nu klaar op je bord!");
             textToSpeech(uiText);
-
-
             j++
           }
           if(pickups[i].id == "gesnedenbroodje" && j == 5){
@@ -128,6 +122,7 @@
             document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: -90 -90 0; delay: 1000;");
             document.getElementById("gesnedentomaat").setAttribute("visible", "true");
             document.getElementById("tomaat").setAttribute("visible", "false");
+            document.getElementById("tomaat").setAttribute("position", "0 20 0");
             
             j++
           }if(pickups[i].id == "gesnedentomaat"  && j == 9){
@@ -139,28 +134,26 @@
             document.getElementById("burger").setAttribute("animation", "property: color; from: #af7a64 ; to: #aa8469; dur: 1;");
             j++;
           }if(pickups[i].id == "burger"  && j == 10){
+            
             document.getElementById("burger").setAttribute("position", "-0.5 1.22 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #ketchup;")
             uiText.setAttribute("value", "Zo nu nog even wat ketchup erbij! Smikkelen");
             textToSpeech(uiText);
             //burger kleur
-            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #bc6257; dur: 1;");
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #aa8469; dur: 1;");
 
             j++;
           }if(pickups[i].id == "ketchup"  && j == 11){
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #slablaadje;")
             document.getElementById("ketchup").setAttribute("position", "-0.5 2 0.55");
             document.getElementById("ketchup").setAttribute("rotation", "180 0 0");
-            document.getElementById("ketchup").setAttribute("animation", "property: position; from: -0.5 2.2 0.55; to: -0.5 2 0.55; dur: 1000; easing: easeInOutElastic; loop: 3");
-            document.getElementById("ketchup").setAttribute("position", "0.3 1.14 1.4");
-            document.getElementById("ketchup").setAttribute("rotation", "0 0 0");
-
+            document.getElementById("ketchup").setAttribute("animation__kshake", "property: position; from: -0.5 2.2 0.55; to: -0.5 2 0.55;dur: 2000; easing: easeInOutElastic; loop: 1");
+            document.getElementById("ketchup").setAttribute("animation__kweg", "property: position; from: -0.5 2 0.55; to: 0.3 1.14 1.4; delay:2000; dur: 2000;");
+            document.getElementById("ketchup").setAttribute("animation__kwegdra", "property: rotation; from: 180 0 0; to: 0 0 0; delay:2000; dur: 2000;");
             uiText.setAttribute("value", "Zo he die burger ruikt heerlijk, dat wordt niet uithongeren vandaag!");
             textToSpeech(uiText);
-
-
-            document.getElementById("bovenkantbroodje").setAttribute("animation__pos", "property: position; from: -0.28 0.66 0; to: -0.185 -0.666 0; delay: 1000");
-            document.getElementById("bovenkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 0 90; to: 0 0 -90; delay: 1000");
+            document.getElementById("bovenkantbroodje").setAttribute("animation__pos", "property: position; from: -0.28 0.66 0; to: -0.185 -0.666 0; delay: 2000");
+            document.getElementById("bovenkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 0 90; to: 0 0 -90; delay: 2000");
  
             j++;
           }
