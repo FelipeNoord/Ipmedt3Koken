@@ -26,7 +26,7 @@
             document.getElementById("tv").setAttribute("text", "value:Lekker bezig!; color: black; align: center;color: black; align: center;")
             await sleep(5000);
             document.getElementById("tv").setAttribute("text", "value: Nu kunnen we de burger bakken\nklik maar op de burger!; color: black; align: center;color: black; align: center;")
-            await sleep(10000);
+            await sleep(5000);
             
             document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
              document.getElementById("olie").setAttribute("rotation", "0 0 0");
@@ -35,7 +35,7 @@
          }
 
           if(pickups[i].id == "burger" && j == 1){
-            document.getElementById("burger").setAttribute("position", "0.53 1.19 -1");
+            document.getElementById("burger").setAttribute("position", "0.53 1.154 -1");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #broodje;")
             document.getElementById("tv").setAttribute("text", "value:Lekker bezig!; color: black; align: center;color: black; align: center;")
             await sleep(5000);
@@ -44,6 +44,8 @@
          }
           if(pickups[i].id == "broodje" && j == 2){
             document.getElementById("broodje").setAttribute("animation__pos", "property: position; from: -0.5 1.17 0.55; to: 0.6 1.17 1");
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c9484a ; to: #c5514e; dur: 1;");
              
              
              j++;
@@ -52,6 +54,8 @@
             document.getElementById("broodje").setAttribute("animation__pos", "property: position; from: -1 1.14 0.5; to: 0.618 1.34 0.6; dur: 2000;");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #slablaadje;")
             document.getElementById("broodje").setAttribute("animation__rot", "property: rotation; from: 0 0 0; to: 0 0 90; delay: 500;");
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c5514e ; to: #c05953; dur: 1;");
             setTimeout(broodjeWeg = (evt) => {
               document.getElementById("broodje").setAttribute("visible", "false");
               document.getElementById("broodje").setAttribute("scale", "0.01 0.01 0.01");
@@ -67,6 +71,8 @@
             document.getElementById("onderkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 -90 0; to: 0 0 -90; delay: 1000");
             document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.585 1.25 0.333; to: 0.146 1.155 0.475; delay: 1000;");
             document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: 90 -90 0; delay: 1000;");
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #bc6257; dur: 1;");
             // document.getElementById("mes").setAttribute("animation__pos" , "property: position; from: 0.8 1.25 0.3; to: 0.4 1.25 0.3; dur: 1000");
             // document.getElementById("mes").setAttribute("animation__rot" , "property: rotation; from: 0 -90 30; to: 0 -90 0; loop: 4; dur: 250; easing: linear;");
             // document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.4 1.25 0.3; to: 0.3 1.196 0.475; delay: 1000");
@@ -76,6 +82,9 @@
           if(pickups[i].id == "gesnedenbroodje" && j == 5){
             document.getElementById("gesnedenbroodje").setAttribute("animation__position", "property: position; from: 0.6 1.34 0.6; to: -0.7 1.307 0.55;");
             document.getElementById("tv").setAttribute("text", "value: En nu nog wat sla op het broodje!; color: black; align: center;color: black; align: center;")
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #bc6257 ; to: #ba665a; dur: 1;");
+            
             j++;
           }
 
@@ -83,23 +92,31 @@
             document.getElementById("slablaadje").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #tomaat;")
             document.getElementById("tv").setAttribute("text", "value: En nu ff de tomaat snijden; color: black; align: center;color: black; align: center;")
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #ba665a ; to: #b4705f; dur: 1;");
             j++;
           }if(pickups[i].id == "tomaat"  && j == 7){
             document.getElementById("tomaat").setAttribute("position", "0.6 1.17 0.6");
             document.getElementById("tv").setAttribute("text", "value: Top gedaan!; color: black; align: center;color: black; align: center;")
             await sleep(5000);
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #b4705f ; to: #af7a64; dur: 1;");
             document.getElementById("tv").setAttribute("text", "value: Nu mag die op het broodje; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "tomaat"  && j == 8){
             document.getElementById("tomaat").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
             document.getElementById("tv").setAttribute("text", "value: Nu is de burger klaar met bakken; color: black; align: center;color: black; align: center;")
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #af7a64 ; to: #aa8469; dur: 1;");
             await sleep(5000)
             document.getElementById("tv").setAttribute("text", "value: Die kan op het broodje; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "burger"  && j == 9){
-            document.getElementById("burger").setAttribute("position", "-0.5 1.2 0.55");
+            document.getElementById("burger").setAttribute("position", "-0.5 1.22 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #ketchup;")
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #bc6257; dur: 1;");
             //text
             document.getElementById("tv").setAttribute("text", "value: Ketchup erbij; color: black; align: center;color: black; align: center;")
             j++;
