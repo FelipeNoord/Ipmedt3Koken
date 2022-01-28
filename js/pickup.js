@@ -22,12 +22,12 @@
         pickups[i].addEventListener("click", async function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben
 
           if(pickups[i].id == "olie" && j == 0){
-            document.getElementById("olie").setAttribute("position", "0.53 2 -1");
-            document.getElementById("olie").setAttribute("rotation", "180 0 0");
-            document.getElementById("olie").setAttribute("animation", "property: position; from: 0.53 2.2 -1; to: 0.53 2 -1; dur: 2000; easing: linear; loop: 2");
-            await sleep(4000);
-            document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
-            document.getElementById("olie").setAttribute("rotation", "0 0 0");
+            document.getElementById("olie").setAttribute("animation__pos", "property:position; from: 0.6 1.14 1.4;  to: 0.53 2 -1; dur: 3000; easing: linear;");
+            document.getElementById("olie").setAttribute("animation__rot", " property: rotation; from: 0 0 0; to: 180 0 0; delay: 2000; dur: 1000;");
+            document.getElementById("olie").setAttribute("animation__shake", "property: position; from: 0.53 2 -1; to: 0.53 2.2 -1; delay: 3000; dur: 2000; easing: easeInOutSine; loop: 3");
+            // await sleep(4000);
+            // document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
+            // document.getElementById("olie").setAttribute("rotation", "0 0 0");
             j++;
          }
 
@@ -36,7 +36,7 @@
             j++;
          }
           if(pickups[i].id == "broodje" && j == 2){
-             document.getElementById("broodje").setAttribute("position", "0.6 1.17 0.6");
+             document.getElementById("broodje").setAttribute("animation__pos", "property: position; from: -1 1.14 0.5; to: -0.5 1.17 0.55");
              j++;
           }
           if(pickups[i].id == "broodje" && j == 3){
