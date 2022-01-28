@@ -41,7 +41,7 @@
          }
 
           if(pickups[i].id == "burger" && j == 1){
-            document.getElementById("burger").setAttribute("position", "0.53 1.19 -1");
+            document.getElementById("burger").setAttribute("position", "0.53 1.154 -1");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #broodje;")
             uiText.setAttribute("value", "Broodje maken bro! Je moet nu het broodje snijden leg het broodje op de snijplank")
             textToSpeech(uiText);
@@ -51,6 +51,9 @@
             document.getElementById("broodje").setAttribute("animation__pos", "property: position; from: -0.5 1.17 0.55; to: 0.6 1.17 1");
             uiText.setAttribute("value", "Je moet nu het broodje snijden leg het broodje op de snijplank");
             textToSpeech(uiText);
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c9484a ; to: #c5514e; dur: 1;");
+             
              
              j++;
           }
@@ -58,12 +61,14 @@
             document.getElementById("broodje").setAttribute("animation__pos", "property: position; from: -1 1.14 0.5; to: 0.618 1.34 0.6; dur: 2000;");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #slablaadje;")
             document.getElementById("broodje").setAttribute("animation__rot", "property: rotation; from: 0 0 0; to: 0 0 90; delay: 500;");
-            
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c5514e ; to: #c05953; dur: 1;");
             setTimeout(broodjeWeg = (evt) => {
               document.getElementById("broodje").setAttribute("visible", "false");
               document.getElementById("broodje").setAttribute("scale", "0.01 0.01 0.01");
               document.getElementById("gesnedenbroodje").setAttribute("visible", "true");
             }, 2000);
+            
 
             uiText.setAttribute("value", "Pak nu je mes zodat je het broodje door midden kan snijden!");
             textToSpeech(uiText);
@@ -78,6 +83,8 @@
             document.getElementById("onderkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 -90 0; to: 0 0 -90; delay: 1000");
             document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.585 1.25 0.333; to: 0.146 1.155 0.475; delay: 1000;");
             document.getElementById("mes").setAttribute("animation__retrot", "property: rotation; from: 0 -90 0; to: 90 -90 0; delay: 1000;");
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #bc6257; dur: 1;");
             // document.getElementById("mes").setAttribute("animation__pos" , "property: position; from: 0.8 1.25 0.3; to: 0.4 1.25 0.3; dur: 1000");
             // document.getElementById("mes").setAttribute("animation__rot" , "property: rotation; from: 0 -90 30; to: 0 -90 0; loop: 4; dur: 250; easing: linear;");
             // document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.4 1.25 0.3; to: 0.3 1.196 0.475; delay: 1000");
@@ -92,21 +99,28 @@
             document.getElementById("gesnedenbroodje").setAttribute("animation__position", "property: position; from: 0.6 1.34 0.6; to: -0.7 1.307 0.55;");
             uiText.setAttribute("value", "Nu nog wat sla op het broodje!");
             textToSpeech(uiText);
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #bc6257 ; to: #ba665a; dur: 1;");
+            
             j++;
           }
 
           if(pickups[i].id == "slablaadje" && j == 6){
             document.getElementById("slablaadje").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #tomaat;")
-            document.getElementById("tv").setAttribute("value", "En nu ff de tomaat snijden; color: black; align: center;color: black; align: center;")
+            //burger kleur
             j++;
           }if(pickups[i].id == "tomaat"  && j == 7){
             document.getElementById("tomaat").setAttribute("position", "0.6 1.17 0.6");
 
             uiText.setAttribute("value", "Top gedaan! Nu mag de tomaat op het broodje");
             textToSpeech(uiText);
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #ba665a ; to: #b4705f; dur: 1;");
             j++;
-          }if(pickups[i].id == "mes" && j == 8){
+          }
+
+          if(pickups[i].id == "mes" && j == 8){
             document.getElementById("mes").setAttribute("animation__pos" , "property: position; from: 0.7 1.25 0.3; to: 0.3 1.25 0.3; dur: 1500");
             document.getElementById("mes").setAttribute("animation__rot" , "property: rotation; from: 0 -90 30; to: 0 -90 0; loop: 4; dur: 250; easing: linear;");
             document.getElementById("mes").setAttribute("animation__return", "property: position; from: 0.5 1.25 0.333; to: 0.146 1.155 0.475; delay: 1000;");
@@ -116,16 +130,19 @@
           }if(pickups[i].id == "tomaat"  && j == 9){
             document.getElementById("tomaat").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
-
             uiText.setAttribute("value", "Pling Pling de burger is klaar met bakken haal em van het vuur en leg em op het broodje!");
             textToSpeech(uiText);
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #af7a64 ; to: #aa8469; dur: 1;");
             j++;
           }if(pickups[i].id == "burger"  && j == 9){
-            document.getElementById("burger").setAttribute("position", "-0.5 1.2 0.55");
+            document.getElementById("burger").setAttribute("position", "-0.5 1.22 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #ketchup;")
-
             uiText.setAttribute("value", "Zo nu nog even wat ketchup erbij! Smikkelen");
             textToSpeech(uiText);
+            //burger kleur
+            document.getElementById("burger").setAttribute("animation", "property: color; from: #c05953 ; to: #bc6257; dur: 1;");
+
             j++;
           }if(pickups[i].id == "ketchup"  && j == 10){
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #slablaadje;")
