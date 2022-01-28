@@ -28,13 +28,15 @@
             document.getElementById("olie").setAttribute("animation__pos", "property:position; from: 0.6 1.14 1.4;  to: 0.53 2 -1; dur: 3000; easing: linear;");
             document.getElementById("olie").setAttribute("animation__rot", " property: rotation; from: 0 0 0; to: 180 0 0; delay: 2000; dur: 1000;");
             document.getElementById("olie").setAttribute("animation__shake", "property: position; from: 0.53 2 -1; to: 0.53 2.2 -1; delay: 3000; dur: 2000; easing: easeInOutSine; loop: 3");
+            document.getElementById("olie").setAttribute("animation__return", "property: position; from: 0.53 2.2 -1; to: 0.6 1.14 1.4; delay: 6000; dur: 2000;");
+            document.getElementById("olie").setAttribute("animation__rota", "property: rotation; from:  180 0 0; to: 0 0 0; delay: 6000; dur: 2000;");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #olie;")
             uiText.setAttribute("value", "Lekker bezig! Nu kunnen we de burger bakken klik maar op de burger!")
             textToSpeech(uiText);
-            document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
-             document.getElementById("olie").setAttribute("rotation", "0 0 0");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
             j++;
+
+            
          }
 
           if(pickups[i].id == "burger" && j == 1){
