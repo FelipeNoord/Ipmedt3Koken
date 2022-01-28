@@ -5,7 +5,7 @@
         // TELEPORTEREN //
         let pickups = document.getElementsByClassName("js--pickup");
         const camera = document.getElementById("js--camera");
-        console.log("hallo");
+        var j = 0;
 
         function sleep(ms) {
           return new Promise(resolve => setTimeout(resolve, ms));
@@ -14,8 +14,7 @@
 
 //burger
       function addListeners(){
-        var j = 0;
-        console.log(j);
+    
         for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener("click", async function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben
 
@@ -24,6 +23,9 @@
             document.getElementById("olie").setAttribute("animation__rot", " property: rotation; from: 0 0 0; to: 180 0 0; delay: 2000; dur: 1000;");
             document.getElementById("olie").setAttribute("animation__shake", "property: position; from: 0.53 2 -1; to: 0.53 2.2 -1; delay: 3000; dur: 2000; easing: easeInOutSine; loop: 3");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #olie;")
+            document.getElementById("tv").setAttribute("text", "value:Lekker bezig!; color: black; align: center;color: black; align: center;")
+            await sleep(5000);
+            document.getElementById("tv").setAttribute("text", "value: Nu kunnen we de burger bakken\nklik maar op de burger!; color: black; align: center;color: black; align: center;")
             await sleep(10000);
             
             document.getElementById("olie").setAttribute("position", "0.6 1.14 1.4");
@@ -35,6 +37,9 @@
           if(pickups[i].id == "burger" && j == 1){
             document.getElementById("burger").setAttribute("position", "0.53 1.19 -1");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #broodje;")
+            document.getElementById("tv").setAttribute("text", "value:Lekker bezig!; color: black; align: center;color: black; align: center;")
+            await sleep(5000);
+            document.getElementById("tv").setAttribute("text", "value: Broodje maken bro; color: black; align: center;color: black; align: center;")
             j++;
          }
           if(pickups[i].id == "broodje" && j == 2){
@@ -70,23 +75,33 @@
           }
           if(pickups[i].id == "gesnedenbroodje" && j == 5){
             document.getElementById("gesnedenbroodje").setAttribute("animation__position", "property: position; from: 0.6 1.34 0.6; to: -0.7 1.307 0.55;");
+            document.getElementById("tv").setAttribute("text", "value: En nu nog wat sla op het broodje!; color: black; align: center;color: black; align: center;")
             j++;
           }
 
           if(pickups[i].id == "slablaadje" && j == 6){
             document.getElementById("slablaadje").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #tomaat;")
+            document.getElementById("tv").setAttribute("text", "value: En nu ff de tomaat snijden; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "tomaat"  && j == 7){
             document.getElementById("tomaat").setAttribute("position", "0.6 1.17 0.6");
+            document.getElementById("tv").setAttribute("text", "value: Top gedaan!; color: black; align: center;color: black; align: center;")
+            await sleep(5000);
+            document.getElementById("tv").setAttribute("text", "value: Nu mag die op het broodje; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "tomaat"  && j == 8){
             document.getElementById("tomaat").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
+            document.getElementById("tv").setAttribute("text", "value: Nu is de burger klaar met bakken; color: black; align: center;color: black; align: center;")
+            await sleep(5000)
+            document.getElementById("tv").setAttribute("text", "value: Die kan op het broodje; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "burger"  && j == 9){
             document.getElementById("burger").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #ketchup;")
+            //text
+            document.getElementById("tv").setAttribute("text", "value: Ketchup erbij; color: black; align: center;color: black; align: center;")
             j++;
           }if(pickups[i].id == "ketchup"  && j == 10){
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0; angle: 3; target: #slablaadje;")
@@ -96,6 +111,10 @@
             await sleep(5000);
             document.getElementById("ketchup").setAttribute("position", "0.3 1.14 1.4");
             document.getElementById("ketchup").setAttribute("rotation", "0 0 0");
+            //text
+            document.getElementById("tv").setAttribute("text", "value: Lekker pik!; color: black; align: center;color: black; align: center;")
+            await sleep(5000)
+            document.getElementById("tv").setAttribute("text", "value: Die burger ruikt heerlijk!; color: black; align: center;color: black; align: center;")
             j++;
           }
       });
@@ -110,6 +129,16 @@
         // })
       }
 
+      async function television(){
+        if(j==0){
+          document.getElementById("tv").setAttribute("text", "value: Welkom bij lekker koken!; color: black; align: center;color: black; align: center;")
+          await sleep(5000);
+          document.getElementById("tv").setAttribute("text", "value: We gaan vandaag een burger maken!; color: black; align: center;color: black; align: center;")
+          await sleep(5000);
+          document.getElementById("tv").setAttribute("text", "value: We beginnen met wat olie in de pan doen!\n Klik maar op het flesje olie!; color: black; align: center;color: black; align: center;")
+        }
+      }
+      television();
       addListeners();
       },
     update: function () {
