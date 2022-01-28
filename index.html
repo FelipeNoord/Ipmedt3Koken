@@ -60,7 +60,7 @@
         <a-entity light="type: ambient; intensity: 0.5" position="0 3 10"></a-entity>
 
 
-        <!--licht-->>
+        <!--licht-->
         <a-entity light="type: spot; intensity: 0.3; angle: 45; target: #focus;" scale="0.1 0.1 0.1" position="0 3 15"></a-entity>
         <a-entity light="type: spot; intensity: 0.3; angle: 45; target: #focus;" scale="0.1 0.1 0.1" position="0 3 -15"></a-entity>
         <a-entity light="type: spot; intensity: 0.3; angle: 45; target: #focus;" scale="0.1 0.1 0.1" position="-15 3 0"></a-entity>
@@ -75,12 +75,7 @@
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
-        <a-box cut id="snijplank" class=" js--placeholder js--interact" height="0.1" width="0.3" color="green" position="1 1.17137 1">
-        </a-box>
 
-        <a-cylinder class="js--pickup js--interact" id="burger" height="0.04" radius="0.2" position="-0.02897 1.18912 0.62695" color="brown"></a-cylinder>
-        <a-sphere class="js--pickup js--interact" height="0.04" radius="0.2" color="red" position="0 1.15367 0.9"></a-sphere>
-        <a-entity class="js--interact js--pickup" gltf-model="#chefsmes-glb" metalness: 1; roughness: 1; rotation="90 120 180" position="-1 1.20 0.5" scale="0.1 0.1 0.1"></a-entity>
 
       
         
@@ -88,8 +83,8 @@
         
         <!-- Starting Screen -->
         <a-plane levelselect class="js--interact" id="js--level1" height="0.4" position="0 2.35 -1.4" text="value: Level 1; color: black; align: center; width: 4;"></a-plane>
-        <a-plane levelselect class="js--interact" id="js--level2" height="0.4" position="0 1.85 -1.4" text="value: Level 2; color: black; align: center; width: 4;"></a-plane>
-        <a-plane levelselect class="js--interact" id="js--level3" height="0.4" position="0 1.35 -1.4" text="value: Level 3; color: black; align: center; width: 4;"></a-plane>
+        <a-plane levelselect id="js--level2" height="0.4" position="0 1.85 -1.4" text="value: Level 2; color: black; align: center; width: 4;"></a-plane>
+        <a-plane levelselect id="js--level3" height="0.4" position="0 1.35 -1.4" text="value: Level 3; color: black; align: center; width: 4;"></a-plane>
 
 
     </a-scene>

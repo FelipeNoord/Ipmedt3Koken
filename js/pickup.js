@@ -90,7 +90,7 @@
           }
           if(pickups[i].id == "gesnedenbroodje" && j == 5){
             document.getElementById("gesnedenbroodje").setAttribute("animation__position", "property: position; from: 0.6 1.34 0.6; to: -0.7 1.307 0.55;");
-            uiText.setAttribute("value", "Nu nog wat sla op het broodje");
+            uiText.setAttribute("value", "Nu nog wat sla op het broodje bro");
             textToSpeech(uiText);
             //burger kleur
             document.getElementById("burger").setAttribute("animation", "property: color; from: #bc6257 ; to: #ba665a; dur: 1;");
@@ -101,6 +101,7 @@
 
           if(pickups[i].id == "slablaadje" && j == 6){
             uiText.setAttribute("value", "Tijd om de tomaat te snijden");
+            textToSpeech(uiText);
             document.getElementById("slablaadje").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #tomaat;")
             
@@ -109,7 +110,6 @@
           }if(pickups[i].id == "tomaat"  && j == 7){
             document.getElementById("tomaat").setAttribute("position", "0.6 1.17 0.6");
 
-            textToSpeech(uiText);
             //burger kleur
             document.getElementById("burger").setAttribute("animation", "property: color; from: #ba665a ; to: #b4705f; dur: 1;");
             j++;
@@ -124,11 +124,12 @@
             document.getElementById("tomaat").setAttribute("visible", "false");
             document.getElementById("tomaat").setAttribute("position", "0 20 0");
             uiText.setAttribute("value", "Top gedaan! Nu mag de tomaat op het broodje");
+            textToSpeech(uiText);
             j++
           }if(pickups[i].id == "gesnedentomaat"  && j == 9){
             document.getElementById("gesnedentomaat").setAttribute("position", "-0.5 1.2 0.55");
             document.getElementById("spotlight").setAttribute("light", "type: spot; intensity: 0.3; angle: 3; target: #burger;")
-            uiText.setAttribute("value", "Pling Pling de burger is klaar met bakken haal em van het vuur en leg em op het broodje!");
+            uiText.setAttribute("value", "Pling Pling de burger is klaar met bakken haal hem van het vuur en leg hem op het broodje!");
             textToSpeech(uiText);
             //burger kleur
             document.getElementById("burger").setAttribute("animation", "property: color; from: #af7a64 ; to: #6B4637; dur: 1;");
@@ -149,12 +150,23 @@
             document.getElementById("ketchup").setAttribute("animation__kshake", "property: position; from: -0.5 2.2 0.55; to: -0.5 2 0.55;dur: 2000; easing: easeInOutElastic; loop: 1");
             document.getElementById("ketchup").setAttribute("animation__kweg", "property: position; from: -0.5 2 0.55; to: 0.3 1.14 1.4; delay:2000; dur: 2000;");
             document.getElementById("ketchup").setAttribute("animation__kwegdra", "property: rotation; from: 180 0 0; to: 0 0 0; delay:2000; dur: 2000;");
-            uiText.setAttribute("value", "Zo he die burger ruikt heerlijk, dat wordt niet uithongeren vandaag!");
+            uiText.setAttribute("value", "Zo hé die burger ruikt heerlijk, dat wordt niet uithongeren vandaag!");
             textToSpeech(uiText);
             document.getElementById("bovenkantbroodje").setAttribute("animation__pos", "property: position; from: -0.28 0.66 0; to: -0.27 -0.666 0; delay: 2000");
             document.getElementById("bovenkantbroodje").setAttribute("animation__rot", "property: rotation; from: 0 0 90; to: 0 0 -90; delay: 2000");
- 
-            j++;
+
+            await sleep(4500)
+            uiText.setAttribute("value", "5");
+            await sleep(1000)
+            uiText.setAttribute("value", "4");
+            await sleep(1000)
+            uiText.setAttribute("value", "3");
+            await sleep(1000)
+            uiText.setAttribute("value", "2");
+            await sleep(1000)
+            uiText.setAttribute("value", "1");
+
+            window.location.href="index.html";
           }
       });
         }
