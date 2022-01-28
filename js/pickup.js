@@ -14,7 +14,7 @@
 
 //burger
       function addListeners(){
-        var j = 3;
+        var j = 0;
         console.log(j);
         for (let i = 0; i < pickups.length; i++) {
         pickups[i].addEventListener("click", async function(evt){ //pickups is een array met alle elementen die als class "pickup" hebben

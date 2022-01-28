@@ -10,7 +10,6 @@
 
     <script src="js/cats.js"></script>
     <script src="js/place.js"></script>
->>>>>>> f4f4e4469ebb95f85df828410365ed3cc1e1ed39
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/levelselect.js"></script>
 
@@ -29,13 +28,13 @@
             <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
             <a-asset-item id="tomaat-glb" src="blendermodels/tomato.glb"></a-asset-item>
             <a-asset-item id="tomaat_stengel-glb" src="blendermodels/tomatostengel.glb"></a-asset-item>
-            <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item> <!-- https://free3d.com/3d-model/plate--81292.html -->
+            <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item>
             <a-asset-item id="snijplank-glb" src="blendermodels/snijplank.glb"></a-asset-item>
-            <a-asset-item id="tomaat-glb" src="blendermodels/tomaat.glb"></a-asset-item>
             <a-asset-item id="ketchup-glb" src="blendermodels/ketchup.glb"></a-asset-item>
             <a-asset-item id="olie-glb" src="blendermodels/olie.glb"></a-asset-item>
             <a-asset-item id="pan-glb" src="blendermodels/pan.glb"></a-asset-item>
             <a-asset-item id="frame-glb" src="blendermodels/frame.glb"></a-asset-item>
+            <a-asset-item id="plakjes-glb" src="blendermodels/plakjes_tomaat.glb"></a-asset-item>
 
             <a-asset-item id="bovenkantbroodje-glb" src="blendermodels/broodje_bovenkant.glb"></a-asset-item>
             <a-asset-item id="onderkantbroodje-glb" src="blendermodels/broodje_onderkant.glb"></a-asset-item>
@@ -95,11 +94,6 @@
         <a-entity gltf-model="#koelkast_deur-glb"></a-entity>
         </a-entity>
 
-        <!-- Food contents -->
-        <a-entity class="js--interact js--pickup js--cutable" id="js--tomato" gltf-model="#tomaat-glb" scale="0.03 0.03 0.03" position="1 1.20 0.5">
-            <a-entity gltf-model=#tomaat_stengel-glb></a-entity>
-        </a-entity>
-
         <a-entity class="js--placeholder js--interact" gltf-model="#plate-glb" position="-0.5 1.14 0.55" scale="0.5 0.5 0.5"></a-entity>
 
         <!--snijplank en mes-->
@@ -117,6 +111,8 @@
             <a-entity class="js--interact js--pickup" id="bovenkantbroodje" gltf-model="#bovenkantbroodje-glb" position="0 0.06 0" scale="1.05 1.05 1.05"></a-entity>
             <a-entity class="js--interact js--pickup" id="onderkantbroodje" gltf-model="#onderkantbroodje-glb" position="0 -0.06 0"></a-entity>
         </a-entity>
+
+
 
         <a-entity pickup id="pan" gltf-model="#pan-glb" position="0.53 1.14 -1" scale="1 0.3 1" rotation="0 -20 0"></a-entity>
 
