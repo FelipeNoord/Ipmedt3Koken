@@ -22,6 +22,9 @@
             <a-asset-item id="keuken-glb" src="blendermodels/keuken.glb"></a-asset-item>
             <a-asset-item id="plate-glb" src="blendermodels/plate.glb"></a-asset-item> <!-- https://free3d.com/3d-model/plate--81292.html -->
             <a-asset-item id="snijplank-glb" src="blendermodels/snijplank.glb"></a-asset-item>
+            <a-asset-item id="tomaat-glb" src="blendermodels/tomaat.glb"></a-asset-item>
+            <a-asset-item id="ketchup-glb" src="blendermodels/ketchup.glb"></a-asset-item>
+            
             
             <!--hamburger-->
             <a-asset-item id="broodje-glb" src="blendermodels/broodje.glb"></a-asset-item>
@@ -79,9 +82,11 @@
         <a-entity pickup class="js--placeholder js--interact" id="snijplank" gltf-model="#snijplank-glb" rotation="0 90 0" position="0.6 1.16 0.6" scale="0.35 0.35 0.35"></a-entity>
 
         <!--ingredienten-->
-        <a-entity pickup class="js--interact js--pickup broodje" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="broodje" gltf-model="#broodje-glb" position="-1 1.14 0.5" scale="0.3 0.3 0.3"></a-entity>
         <a-entity pickup class="js--interact js--pickup" id="slablaadje" gltf-model="#slablaadje-glb" position="1 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
-        <a-entity pickup class="js--interact js--pickup burger" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="burger" gltf-model="#burger-glb" position="0.5 1.14 1.4" scale="0.3 0.3 0.3"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="tomaat" gltf-model="#tomaat-glb" position="0 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity pickup class="js--interact js--pickup" id="ketchup" gltf-model="#ketchup-glb" position="0.3 1.14 1.4" scale="0.05 0.05 0.05"></a-entity>
 
     </a-scene>
 </body>
